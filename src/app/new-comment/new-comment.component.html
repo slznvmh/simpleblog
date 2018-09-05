@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header">
+    <button type="button" (click)="ToggleNewCommentVisibility()" class="btn btn-outline-primary">
+      <span *ngIf="!NewCommentFormVisible">Post your comment</span>
+      <span *ngIf="NewCommentFormVisible">Cancel</span>
+    </button>
+  </div>
+  <div class="card-body" *ngIf="NewCommentFormVisible">
+    <form>
+      <div class="form-group row">
+        <label for="nametb" class="col-form-label col-sm-2">Name</label>
+        <div class="col-sm-10">
+          <input type="text" name="nametb" required class="form-control" #name="ngModel" [ngClass]="{'is-invalid': name.invalid}" [(ngModel)]="NewComment.name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="emailtb" class="col-form-label col-sm-2">Email</label>
+        <div class="col-sm-10">
+          <input type="email" [email]="true" name="emailtb" required class="form-control" #email="ngModel" [ngClass]="{'is-invalid': email.invalid}" [(ngModel)]="NewComment.email">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="bodyta" class="col-form-label col-sm-2">Comment</label>
+        <div class="col-sm-10">
+          <textarea name="bodyta" rows="5" required class="form-control" #body="ngModel" [ngClass]="{'is-invalid': body.invalid}" [(ngModel)]="NewComment.body"></textarea>
+        </div>
+      </div>
+    </form>
+    <div class="alert alert-danger" role="alert" *ngIf="name.invalid || email.invalid || body.invalid">
+      <p *ngIf="name.invalid">Comment name can not be empty!</p>
+      <p *ngIf="email.invalid">Email can not be empty and must have correct format!</p>
+      <p *ngIf="body.invalid">Comment text can not be empty!</p>
+    </div>
+    <div class="row justify-content-end">
+      <div class="col-1">
+        <button type="button" class="btn btn-outline-primary" [disabled]="name.invalid || email.invalid || body.invalid" (click)="SaveComment()">Add</button>
+      </div>
+    </div>
+  </div>
+</div>

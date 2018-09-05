@@ -1,0 +1,8 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><a href="#" class="card-link" routerLink="/post/{{Post.id}}">{{Post.title}}</a></h5>
+    <p class="card-text">{{Post.body}}</p>
+    <hr>
+    <app-post-comments [SimpleView]="'true'" [PostId]="Post.id"></app-post-comments>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+div.router-box{
+    margin-top: 70px;
+}
+
+div.alerts-container{
+    position: fixed;
+    height: 170px;
+    width: 100%;
+    bottom: 0;
+    background: rgba(200, 200, 200, 0.7);
+    border-top: solid black 1;
+    border-left: solid black 1;
+    border-right: solid black 1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+div.alerts-container div.alert-body{
+    margin: 30px auto;
+    width: 600px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 1);
+    border: solid grey 1px;
+    border-radius: 10px;
+}

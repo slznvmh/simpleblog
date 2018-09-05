@@ -1,0 +1,29 @@
+<div class="card">
+  <h5 class="card-header">New post</h5>
+  <div class="card-body">
+    <form>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="titletb">Title</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" [ngClass]="{'is-invalid': title.invalid}" required [(ngModel)]="NewPost.title" #title="ngModel" name="title" id="titletb" placeholder="Title">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="bodytb">Body</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" [ngClass]="{'is-invalid': title.invalid}" rows="10" required id="bodytb" [(ngModel)]="NewPost.body" #body="ngModel" name="body" placeholder="Body"></textarea>
+        </div>
+      </div>
+    </form>
+    <div class="alert alert-danger" role="alert" *ngIf="title.invalid || body.invalid">
+      <p *ngIf="title.invalid">Title can not be empty!</p>
+      <p *ngIf="body.invalid">Body can not be empty!</p>
+    </div>
+    <div class="row justify-content-end">
+      <div class="col-2 btn-group">
+        <button type="submit" class="btn btn-outline-primary" [disabled]="title.invalid || body.invalid" (click)="SavePost()">Add</button>
+        <a class="btn btn-outline-dark" routerLink="/posts">Cancel</a>
+      </div>
+    </div>
+  </div>
+</div>

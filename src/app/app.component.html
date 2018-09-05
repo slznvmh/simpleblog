@@ -1,0 +1,22 @@
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">{{Title}}</a>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="/posts">Home</a>
+    </li>
+  </ul>
+  <form class="form-inline">
+    <a class="btn btn-outline-light my-2 my-sm-0" routerLink="/newpost">New post</a>
+  </form>
+</nav>
+<div class="router-box container">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="alerts-container" *ngIf="alertsService.Alerts && alertsService.Alerts.length">
+  <div class="alert-body">
+    <div *ngFor="let alert of alertsService.Alerts">
+      <alert class="alert-pull-item" [type]="alert.type" [dismissOnTimeout]="alert.timeout" (onClosed)="alertsService.OnClosed(alert)">{{ alert.msg }}</alert>
+    </div>
+  </div>
+</div>

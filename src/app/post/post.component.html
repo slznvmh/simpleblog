@@ -1,0 +1,10 @@
+<div class="card" *ngIf="CurrentPost">
+  <h5 class="card-header">{{CurrentPost.title}}</h5>
+  <div class="card-body">
+    <p class="card-text">{{CurrentPost.body}}</p>
+  </div>
+  <hr>
+  <app-new-comment [PostId]="CurrentPost.id"></app-new-comment>
+  <hr>
+  <app-post-comments [SimpleView]="'false'" [PostId]="CurrentPost.id"></app-post-comments>
+</div>
