@@ -1,6 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NewCommentComponent } from './new-comment.component';
+import { FormsModule } from '@angular/forms';
 
 describe('NewCommentComponent', () => {
   let component: NewCommentComponent;
@@ -8,7 +10,11 @@ describe('NewCommentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewCommentComponent ]
+      declarations: [ NewCommentComponent ],
+      imports: [
+        FormsModule,
+        HttpClientModule
+      ]
     })
     .compileComponents();
   }));

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PostCommentsComponent } from './post-comments.component';
@@ -8,7 +9,10 @@ describe('PostCommentsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostCommentsComponent ]
+      declarations: [ PostCommentsComponent ],
+      imports:[
+        HttpClientModule
+      ]
     })
     .compileComponents();
   }));

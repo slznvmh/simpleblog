@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertsService } from './services/alerts.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,6 @@ import { AlertsService } from './services/alerts.service';
 export class AppComponent {
   public Title: string = 'Simple Blog';
 
-  constructor(public alertsService: AlertsService) { }
+  constructor(public alertsService: AlertsService, private title: Title) {
+  }
 }
