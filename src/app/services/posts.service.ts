@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PostsService {
-  private _mainPostsUrl = "http://jsonplaceholder.typicode.com/posts";
+  private _mainPostsUrl = "https://jsonplaceholder.typicode.com/posts";
 
   constructor(private http: HttpClient) { }
 
